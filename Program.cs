@@ -16,7 +16,9 @@ namespace Assignment___Conditions_and_Loops
             //Problem2();
             //Problem3();
             //Problem4();
-            Problem5();
+            //Problem5();
+            //Problem6();
+            Menu();
 
         } // Main
         public static void Problem1()
@@ -187,9 +189,93 @@ namespace Assignment___Conditions_and_Loops
 
         public static void Problem6()
         {
+            // Loop from 1 to 100
+            for (int i = 1; i <= 100; i++)
+            {
+                if(i % 3 == 0 && i % 5 == 0)
+                {
+                    Console.WriteLine("FizzBuzz");
+                }
+                else if (i % 3 == 0)
+                {
+                    Console.WriteLine("Fizz");
+                }
+                else if (i % 5 == 0)
+                {
+                    Console.WriteLine("Buzz");
+                }
+                else
+                {
+                    Console.WriteLine(i);
+                }
+            }
+        } // Problem6()
+        public static void Menu()
+        {
+            bool exitRequested = false;
 
+            do
+            {
+                Console.WriteLine("Menu:");
+                Console.WriteLine("1. Conditions");
+                Console.WriteLine("2. Loops");
+                Console.WriteLine("3. Exit");
+                Console.WriteLine("Enter your choice: ");
 
+                string userInput = Console.ReadLine();
 
-        }
+                if (userInput == "1")
+                {
+                    Console.WriteLine("Problem 1: Positive, Negative, or Zero");
+                    Console.WriteLine("Problem 2: Largest of Three (using if / else if / else)");
+                    Console.WriteLine("Problem 3: Check for a Vowel");
+                    Console.WriteLine("Press any other key to go back to the menu.");
+                    userInput = Console.ReadLine();
+                    if (userInput == "1")
+                    {
+                        Problem1();
+                    }
+                    else if (userInput == "2")
+                    {
+                        Problem2();
+                    }
+                    else if (userInput == "3")
+                    {
+                        Problem3();
+                    }
+                }
+                // Loop Questions
+                else if (userInput == "2")
+                {
+                    Console.WriteLine("Problem 4: Multiplication Table");
+                    Console.WriteLine("Problem 5: Check if a Number is Prime");
+                    Console.WriteLine("Problem 6: FizzBuzz");
+                    Console.WriteLine("Press any other key to go back to the menu.");
+                    userInput = Console.ReadLine();
+                    if (userInput == "4")
+                    {
+                        Problem4();
+                    }
+                    else if (userInput == "5")
+                    {
+                        Problem5();
+                    }
+                    else if (userInput == "6")
+                    {
+                        Problem6();
+                    }
+                }
+                // Exit
+                else if (userInput == "3")
+                {
+                    Console.ReadKey();
+                }
+                else
+                {
+                    Console.WriteLine("Please enter a valid option.");
+                }
+            } while (exitRequested);
+        } // Menu()
+
     } // Class
 } // Namespace
